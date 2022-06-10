@@ -4,7 +4,7 @@ describe('Login page test', () => {
         cy.get('#nav').contains('Login').click()
         cy.url().should('include', '/login')
     })
-    it('check visit to login page and login with empty username', () => {
+    it('empty username', () => {
         const alert = cy.stub();
         cy.on('window:alert', alert);
 
@@ -16,7 +16,7 @@ describe('Login page test', () => {
         cy.url().should('contain', '/login');
     })
 
-    it('check visit to login page and login with empty password', () => {
+    it('empty password', () => {
         const alert = cy.stub();
         cy.on('window:alert', alert);
 
@@ -28,7 +28,7 @@ describe('Login page test', () => {
         cy.url().should('contain', '/login');
     })
 
-    it('check visit to login page and login with wrong username', () => {
+    it('wrong username', () => {
         const alert = cy.stub();
         cy.on('window:alert', alert);
 
@@ -39,7 +39,7 @@ describe('Login page test', () => {
         });
     })
 
-    it('check visit to login page and login with wrong password', () => {
+    it('wrong password', () => {
         const alert = cy.stub();
         cy.on('window:alert', alert);
 
@@ -50,7 +50,7 @@ describe('Login page test', () => {
         });
     })
 
-    it('check visit to login page and login valid credentials', () => {
+    it('successful login', () => {
         cy.get('input[name="username"]').type('admin');
         cy.get('input[name="password"]').type('admin');
         cy.get('button').contains('Login').click();
