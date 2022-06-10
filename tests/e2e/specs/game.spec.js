@@ -1,4 +1,4 @@
-describe('Testing About page', () => {
+describe('Game page', () => {
     beforeEach(() => {
         cy.visit('/')
         cy.get('#nav').contains('Login').click()
